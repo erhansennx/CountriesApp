@@ -43,12 +43,13 @@ class FeedFragment : Fragment() {
             countryList.visibility = View.GONE
             countryError.visibility = View.GONE
             countryLoading.visibility = View.GONE
-            feedViewModel.refreshData()
+            feedViewModel.refreshFromAPI()
+            swipeRefreshLayout.isRefreshing = false
         }
 
     }
 
-    fun observeLiveData() { //Live data'ları gözlemlemek
+    private fun observeLiveData() { //Live data'ları gözlemlemek
 
         feedViewModel.countries.observe(viewLifecycleOwner, Observer { countries ->
             countries?.let {
