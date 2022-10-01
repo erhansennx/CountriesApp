@@ -3,6 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="selectedCountry"
+            type="com.erhansen.kotlincountries.model.Model" />
+    </data>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,6 +25,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
+            android:downloadUrl="@{selectedCountry.imageURL}"
             android:minHeight="200dp"
             android:scaleType="fitCenter"></ImageView>
 
@@ -32,6 +39,7 @@
             android:layout_marginStart="123dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="123dp"
+            android:text="@{selectedCountry.countryName}"
             android:gravity="center"
             android:hint="Country Name"
             android:textColor="@color/black"
@@ -46,6 +54,7 @@
             android:layout_alignStart="@+id/countryName"
             android:layout_alignEnd="@+id/countryName"
             android:gravity="center"
+            android:text="@{selectedCountry.countryCapital}"
             android:layout_marginTop="15dp"
             android:hint="Country Capital"
             android:textColor="@color/black"
@@ -58,6 +67,7 @@
             android:layout_below="@+id/countryCapital"
             android:layout_alignStart="@+id/countryCapital"
             android:layout_alignEnd="@+id/countryCapital"
+            android:text="@{selectedCountry.countryRegion}"
             android:gravity="center"
             android:layout_marginTop="10dp"
             android:hint="Country Region"
@@ -71,6 +81,7 @@
             android:layout_below="@+id/countryRegion"
             android:layout_alignStart="@+id/countryRegion"
             android:layout_alignEnd="@+id/countryRegion"
+            android:text="@{selectedCountry.countryCurrency}"
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:hint="Currency"
@@ -84,6 +95,7 @@
             android:layout_below="@+id/countryCurrency"
             android:layout_alignStart="@+id/countryCurrency"
             android:layout_alignEnd="@+id/countryCurrency"
+            android:text="@{selectedCountry.countryLanguage}"
             android:gravity="center"
             android:layout_marginTop="10dp"
             android:hint="Language"

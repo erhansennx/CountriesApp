@@ -3,6 +3,7 @@ package com.erhansen.kotlincountries.util
 import android.content.Context
 import android.graphics.Paint
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -34,4 +35,9 @@ fun placeHolderProgressBar(context: Context) : CircularProgressDrawable {
         centerRadius = 40f
         start()
     }
+}
+
+@BindingAdapter("android:downloadUrl") // Bu fonksiyon XML'de çalışabilir hale geldi.
+fun downloadImage(imageView: ImageView, imageURL: String?) {
+    imageView.downloadFromUrl(imageURL, placeHolderProgressBar(imageView.context))
 }
